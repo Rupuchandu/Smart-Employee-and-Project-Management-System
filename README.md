@@ -658,34 +658,63 @@ Covered services: `AuthService`, `EmployeeService`, `ProjectService`, `TaskServi
 
 1. Login Page
 ![Login-Page](screenshots/Login-Page.png)
+Figure 1: Login Page
+
 2. Signup Page
 ![Signup-Page](screenshots/Signup-Page.png)
+Figure 2: Signup Page
+
 3. Admin Dashboard
 ![Admin-Dashboard](screenshots/Admin-Dashboard.png)
+Figure 3: Admin Dashboard
+
 4. Admin Dashboard-Employee Management
 ![Admin-Dashboard-Employee-Management](screenshots/Admin-Dashboard-Employee-Management.png)
+Figure 4: Admin Dashboard-Employee Management
+
 5. Admin Dashboard-Project Management
 ![Admin-Dashboard-Project-Management](screenshots/Admin-Dashboard-Project-Management.png)
+Figure 5: Admin Dashboard-Project Management
+
 6. Admin Dashboard-Task Management
 ![Admin-Dashboard-Task-Management](screenshots/Admin-Dashboard-Task-Management.png)
+Figure 6: Admin Dashboard-Task Management
+
 7. Admin Dashboard-Audit Logs
 ![Admin-Dashboard-Audit-Logs](screenshots/Admin-Dashboard-Audit-Logs.png)
+Figure 7: Admin Dashboard-Audit Logs
+
 8. Admin Dashboard-Reports
 ![Admin-Dashboard-Reports](screenshots/Admin-Dashboard-Reports.png)
+Figure 8: Admin Dashboard-Reports
+
 9. Admin Profile Settings
 ![Admin-Profile-Settings](screenshots/Admin-Profile-Settings.png)
+Figure 9: Admin Profile Settings
+
 10. Employee Dashboard
 ![Employee-Dashboard](screenshots/Employee-Dashboard.png)
+Figure 10: Employee Dashboard
+
 11. Employee Dashboard-Project Management
 ![Employee-Dashboard-Project-Management](screenshots/Employee-Dashboard-Project-Management.png)
+Figure 11: Employee Dashoard-Project Management
+
 12. Employee Dashboard-Task Management
 ![Employee-Dashboard-Task-Management](screenshots/Employee-Dashboard-Task-Management.png)
+Figure 12: Employee Dashboard-Task Management
+
 13. Employee Dashboard-Reports
 ![Employee-Dashboard-Reports](screenshots/Employee-Dashboard-Reports.png)
+Figure 13: Employee Dashboard Reports
+
 14. Employee Profile Settings
 ![Employee-Profile-Settings](screenshots/Employee-Profile-Settings.png)
+Figure 14: Employee Profile Settings
+
 15. Dark Theme Dashboard
 ![Dark-Theme-Dashboard](screenshots/Dark-Theme-Dashboard.png)
+Figure 15: Dark Theme Dashboard
 
 ## System Flowchart
 
