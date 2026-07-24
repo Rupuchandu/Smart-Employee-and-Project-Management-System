@@ -108,7 +108,7 @@ A full-stack web application for managing employees, projects, and tasks, with r
 
 ## 📁 Project Structure
 
-
+```text
 Smart Employee Project Management System/
 │
 ├── employee-project-management-backend/
