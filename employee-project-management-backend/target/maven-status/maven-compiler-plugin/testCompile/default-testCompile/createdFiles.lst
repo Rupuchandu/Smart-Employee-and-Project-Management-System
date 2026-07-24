@@ -1,0 +1,5 @@
+com\epms\service\AuthServiceTest.class
+com\epms\service\EmployeeServiceTest.class
+com\epms\service\ProjectServiceTest.class
+com\epms\service\TaskServiceTest.class
+com\epms\service\ReportServiceTest.class
