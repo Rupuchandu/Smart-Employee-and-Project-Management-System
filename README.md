@@ -735,4 +735,11 @@ Figure 15: Dark Theme Dashboard
 
 ## Author
 
-Built as a Full Stack capstone project using ReactJS and Spring Boot.
+## Built for EverNorth Round 2 Assessment
+
+* **Done By:** Nindali Rupu Chandu
+* **Project Repository:** GitHub Repository
+* **Submission Context:** Developed for the EverNorth Technical Assessment (Round 2)
+* **Date:** July 2026
+* **License:** MIT License
+
