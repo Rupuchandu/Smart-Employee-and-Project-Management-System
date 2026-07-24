@@ -106,7 +106,8 @@ A full-stack web application for managing employees, projects, and tasks, with r
 
 ---
 
-## Project Structure
+## 📁 Project Structure
+
 
 Smart Employee Project Management System/
 │
@@ -208,8 +209,7 @@ Smart Employee Project Management System/
 ├── docker-compose.yml
 ├── Smart_EPMS_Postman_Collection.json
 └── README.md
-
----
+```
 
 ## Database Design
 
