@@ -657,35 +657,35 @@ Covered services: `AuthService`, `EmployeeService`, `ProjectService`, `TaskServi
 ## Application Screenshots
 
 1. Login Page
-![Login Page](screenshots/Login.png)
+![Login-Page](screenshots/Login-Page.png)
 2. Signup Page
-![SignupPage](screenshots/Signup Page.png)
+![Signup-Page](screenshots/Signup-Page.png)
 3. Admin Dashboard
-![AdminDashboard](screenshots/Admin Dashboard.png)
+![Admin-Dashboard](screenshots/Admin-Dashboard.png)
 4. Admin Dashboard-Employee Management
-![AdminDashboard-EmployeeManagement](screenshots/Admin Dashboard-Employee Management.png)
+![Admin-Dashboard-Employee-Management](screenshots/Admin-Dashboard-Employee-Management.png)
 5. Admin Dashboard-Project Management
-![AdminDashboard-ProjectManagement](screenshots/Admin Dashboard-Project Management.png)
+![Admin-Dashboard-Project-Management](screenshots/Admin-Dashboard-Project-Management.png)
 6. Admin Dashboard-Task Management
-![AdminDashboard-TaskManagement](screenshots/Admin Dashboard-Task Management.png)
+![Admin-Dashboard-Task-Management](screenshots/Admin-Dashboard-Task-Management.png)
 7. Admin Dashboard-Audit Logs
-![AdminDashboard-AuditLogs](screenshots/Admin Dashboard-Audit Logs.png)
+![Admin-Dashboard-Audit-Logs](screenshots/Admin-Dashboard-Audit-Logs.png)
 8. Admin Dashboard-Reports
-![AdminDashboard-Reports](screenshots/Admin Dashboard-Reports.png)
+![Admin-Dashboard-Reports](screenshots/Admin-Dashboard-Reports.png)
 9. Admin Profile Settings
-![AdminProfileSettings](screenshots/Admin Profile Settings.png)
+![Admin-Profile-Settings](screenshots/Admin-Profile-Settings.png)
 10. Employee Dashboard
-![EmployeeDashboard](screenshots/Employee Dashboard.png)
+![Employee-Dashboard](screenshots/Employee-Dashboard.png)
 11. Employee Dashboard-Project Management
-![EmployeeDashboard-ProjectManagement](screenshots/Employee Dashboard-Project Management.png)
+![Employee-Dashboard-Project-Management](screenshots/Employee-Dashboard-Project-Management.png)
 12. Employee Dashboard-Task Management
-![EmployeeDashboard-TaskManagement](screenshots/Employee Dashboard-Task Management.png)
+![Employee-Dashboard-Task-Management](screenshots/Employee-Dashboard-Task-Management.png)
 13. Employee Dashboard-Reports
-![EmployeeDashboard-Reports](screenshots/Employee Dashboard-Reports.png)
+![Employee-Dashboard-Reports](screenshots/Employee-Dashboard-Reports.png)
 14. Employee Profile Settings
-![Employee Profile Settings](screenshots/Employee%20Profile%20Settings.png)
+![Employee-Profile-Settings](screenshots/Employee-Profile-Settings.png)
 15. Dark Theme Dashboard
-![Dark Theme Dashboard](screenshots/Dark%20Theme%20Dashboard.png)
+![Dark-Theme-Dashboard](screenshots/Dark-Theme-Dashboard.png)
 
 ## System Flowchart
 
