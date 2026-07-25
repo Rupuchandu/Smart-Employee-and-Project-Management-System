@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShieldCheck, Lock, Mail, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { ShieldCheck, Lock, Mail, ArrowRight, Eye, EyeOff, KeyRound } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Toast from '../components/Toast';
 
 const loginSchema = yup.object({
-  email: yup.string().required('Email is required').email('Enter a valid email address'),
+  email: yup.string().required('Username or Email address is required'),
   password: yup.string().required('Password is required'),
 }).required();
 
@@ -22,28 +22,49 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(loginSchema),
+    defaultValues: {
+      email: 'admin@gmail.com',
+      password: 'Admin@123',
+    },
   });
+
+  const handleFillAdmin = () => {
+    setValue('email', 'admin@gmail.com', { shouldValidate: true });
+    setValue('password', 'Admin@123', { shouldValidate: true });
+    setToast({ type: 'info', message: 'Admin credentials filled!' });
+  };
 
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const result = await login(data.email, data.password);
+      let inputEmail = data.email.trim();
+      // Handle username or email formats (e.g. 'admin' -> 'admin@gmail.com')
+      if (!inputEmail.includes('@')) {
+        if (inputEmail.toLowerCase() === 'admin') {
+          inputEmail = 'admin@gmail.com';
+        } else {
+          inputEmail = `${inputEmail}@gmail.com`;
+        }
+      }
+
+      const result = await login(inputEmail, data.password);
       if (result.success) {
         setToast({ type: 'success', message: 'Login successful! Redirecting...' });
         navigate('/dashboard', { replace: true });
       } else {
         setToast({
           type: 'error',
-          message: result.message || 'Invalid Email or Password',
+          message: result.message || 'Invalid Username/Email or Password',
         });
       }
     } catch (err) {
       setToast({
         type: 'error',
-        message: 'Invalid Email or Password',
+        message: 'Invalid Username/Email or Password',
       });
     } finally {
       setLoading(false);
@@ -54,7 +75,7 @@ const Login = () => {
     <div className="min-vh-100 d-flex align-items-center justify-content-center p-3" style={{ backgroundColor: 'var(--bg-body)' }}>
       {toast.message && <Toast type={toast.type} message={toast.message} onClose={() => setToast({ type: '', message: '' })} />}
 
-      <div className="stat-card shadow-lg border-secondary p-4 p-md-5" style={{ maxWidth: '440px', width: '100%' }}>
+      <div className="stat-card shadow-lg border-secondary p-4 p-md-5" style={{ maxWidth: '460px', width: '100%' }}>
         <div className="text-center mb-4">
           <div className="brand-logo mx-auto mb-3" style={{ width: '56px', height: '56px', borderRadius: '16px' }}>
             <ShieldCheck size={32} color="#ffffff" />
@@ -63,15 +84,39 @@ const Login = () => {
           <p className="text-muted small">Sign in to Smart EPMS Portal</p>
         </div>
 
+        {/* Quick Admin Credentials Demo Banner */}
+        <div
+          className="p-3 mb-4 rounded-3 d-flex align-items-center justify-content-between border"
+          style={{ backgroundColor: 'rgba(13, 110, 253, 0.08)', borderColor: 'rgba(13, 110, 253, 0.2)' }}
+        >
+          <div className="d-flex align-items-center gap-2 small">
+            <KeyRound size={20} className="text-primary flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-primary">Default Admin Credentials</div>
+              <div className="text-muted" style={{ fontSize: '0.8rem' }}>
+                Email: <strong>admin@gmail.com</strong> | Password: <strong>Admin@123</strong>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="btn btn-sm btn-outline-primary ms-2 flex-shrink-0 font-semibold"
+            onClick={handleFillAdmin}
+            style={{ fontSize: '0.75rem' }}
+          >
+            Auto Fill
+          </button>
+        </div>
+
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="mb-3">
-            <label className="form-label small font-semibold">Email Address</label>
+            <label className="form-label small font-semibold">Username or Email Address</label>
             <div className="input-group">
               <span className="input-group-text bg-transparent text-muted"><Mail size={18} /></span>
               <input
-                type="email"
+                type="text"
                 className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                placeholder=""
+                placeholder="admin@gmail.com"
                 {...register('email')}
               />
             </div>
@@ -87,7 +132,7 @@ const Login = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                placeholder=""
+                placeholder="Admin@123"
                 {...register('password')}
               />
               <button
@@ -107,7 +152,7 @@ const Login = () => {
             className="btn btn-primary-custom w-100 py-2 d-flex align-items-center justify-content-center gap-2"
             disabled={loading}
           >
-            {loading ? 'Signing In...' : 'Sign In'}
+            {loading ? 'Signing In...' : 'Sign In as Admin'}
             {!loading && <ArrowRight size={18} />}
           </button>
         </form>
