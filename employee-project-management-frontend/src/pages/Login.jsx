@@ -25,10 +25,6 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(loginSchema),
-    defaultValues: {
-      email: 'admin@gmail.com',
-      password: 'Admin@123',
-    },
   });
 
   const onSubmit = async (data) => {
@@ -85,7 +81,7 @@ const Login = () => {
               <input
                 type="text"
                 className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                placeholder="admin@gmail.com"
+                placeholder=""
                 {...register('email')}
               />
             </div>
@@ -101,7 +97,7 @@ const Login = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                placeholder="••••••••"
+                placeholder=""
                 {...register('password')}
               />
               <button
