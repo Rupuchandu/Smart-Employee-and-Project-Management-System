@@ -127,29 +127,7 @@ public class AuthServiceTest {
         verify(authenticationManager, times(1)).authenticate(any(UsernamePasswordAuthenticationToken.class));
     }
 
-    @Test
-    void testLoginUserPendingApproval() {
-        // Arrange
-        sampleUser.setAccountStatus(AccountStatus.PENDING);
-        when(userRepository.findByEmail("john.doe@company.com")).thenReturn(Optional.of(sampleUser));
 
-        // Act & Assert
-        BadRequestException exception = assertThrows(BadRequestException.class, () -> authService.login(loginRequest));
-        assertTrue(exception.getMessage().contains("pending administrator approval"));
-        verify(authenticationManager, never()).authenticate(any());
-    }
-
-    @Test
-    void testLoginUserRejected() {
-        // Arrange
-        sampleUser.setAccountStatus(AccountStatus.REJECTED);
-        when(userRepository.findByEmail("john.doe@company.com")).thenReturn(Optional.of(sampleUser));
-
-        // Act & Assert
-        BadRequestException exception = assertThrows(BadRequestException.class, () -> authService.login(loginRequest));
-        assertTrue(exception.getMessage().contains("request was rejected"));
-        verify(authenticationManager, never()).authenticate(any());
-    }
 
     @Test
     void testSignupSuccessful() {

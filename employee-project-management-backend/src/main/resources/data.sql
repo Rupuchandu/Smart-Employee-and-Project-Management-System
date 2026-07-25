@@ -12,7 +12,7 @@ ON DUPLICATE KEY UPDATE name=VALUES(name);
 -- 2. Default Administrator User (Email: admin@gmail.com, Password: Admin@123)
 INSERT INTO users (id, first_name, last_name, email, phone, password, role, account_status, age, salary, created_at, updated_at) VALUES
 (1, 'Administrator', 'User', 'admin@gmail.com', '9876543210', '$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymY0v86C1H47.E5uL5v5/2', 'ADMIN', 'APPROVED', 35, 120000.0, NOW(), NOW())
-ON DUPLICATE KEY UPDATE email=VALUES(email);
+ON DUPLICATE KEY UPDATE email=VALUES(email), account_status='APPROVED';
 
 -- 3. Sample Employee Record (Alex Morgan)
 INSERT INTO employees (id, employee_id, first_name, last_name, email, phone, department, department_id, role, status, joining_date, salary, age, created_at, updated_at) VALUES

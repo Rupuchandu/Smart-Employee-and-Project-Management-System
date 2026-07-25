@@ -47,6 +47,18 @@ public class GlobalExceptionHandler {
                 .body(ApiResponse.error("Invalid email or password"));
     }
 
+    @ExceptionHandler({
+        org.springframework.security.authentication.LockedException.class,
+        org.springframework.security.authentication.DisabledException.class,
+        org.springframework.security.authentication.AccountExpiredException.class,
+        org.springframework.security.authentication.CredentialsExpiredException.class,
+        org.springframework.security.core.AuthenticationException.class
+    })
+    public ResponseEntity<ApiResponse<Void>> handleAuthenticationException(Exception ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ApiResponse.error("Invalid email or password"));
+    }
+
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<ApiResponse<Void>> handleBadRequestException(BadRequestException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)

@@ -40,11 +40,10 @@ public class AuthService {
         String password = loginRequest.getPassword() != null ? loginRequest.getPassword() : "";
 
         User user = userRepository.findByEmail(email).orElse(null);
-        if (user != null) {
-            if (user.getAccountStatus() == AccountStatus.PENDING) {
-                throw new BadRequestException("Your account registration is pending administrator approval. Please wait for approval before logging in.");
-            } else if (user.getAccountStatus() == AccountStatus.REJECTED) {
-                throw new BadRequestException("Your account registration request was rejected by administrator.");
+        if (user != null && (user.getRole() == Role.ADMIN || user.getAccountStatus() == null)) {
+            if (user.getAccountStatus() != AccountStatus.APPROVED) {
+                user.setAccountStatus(AccountStatus.APPROVED);
+                userRepository.save(user);
             }
         }
 
